@@ -1,0 +1,11 @@
+# Use the official Azure Functions Python runtime image
+FROM mcr.microsoft.com/azure-functions/python:4-python3.9
+
+# Set the working directory inside the container
+WORKDIR /home/site/wwwroot
+
+# Copy the function app code to the container
+COPY . /home/site/wwwroot
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
